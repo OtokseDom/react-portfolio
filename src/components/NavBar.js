@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from "../assets/img/logo.svg";
 import navIcon1 from "../assets/img/nav-icon1.svg";
+import navIcon4 from "../assets/img/nav-icon4.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
-import navIcon3 from "../assets/img/nav-icon3.svg";
 
 export const NavBar = () => {
 	const [activeLink, setActiveLink] = useState("home");
@@ -53,28 +53,36 @@ export const NavBar = () => {
 							Skills
 						</Nav.Link>
 						<Nav.Link
-							href="#projects"
-							className={activeLink === "projcts" ? "active navbar-link" : "navbar-link"}
-							onClick={() => onUpdateActiveLink("projects")}
+							href="#project"
+							className={activeLink === "project" ? "active navbar-link" : "navbar-link"}
+							onClick={() => onUpdateActiveLink("project")}
 						>
 							Projects
 						</Nav.Link>
 					</Nav>
 					<span className="navbar-text">
 						<div className="social-icon">
-							<a href="#linkedin">
+							<a href="https://www.linkedin.com/in/john-dominic-escoto-a29778309" target="_blank">
 								<img src={navIcon1} alt="" />
 							</a>
-							<a href="#facebook">
+							<a href="mailto:imjohndominic08@gmail.com" target="_blank">
+								<img src={navIcon4} alt="" />
+							</a>
+							<a href="https://www.facebook.com/access.any" target="_blank">
 								<img src={navIcon2} alt="" />
 							</a>
-							<a href="#instagram">
-								<img src={navIcon3} alt="" />
-							</a>
 						</div>
-						<button className="vvd" onClick={() => console.log("connect")}>
-							<span>Let's Connect</span>
-						</button>
+						<Nav>
+							<Nav.Link
+								href="#contact"
+								className={activeLink === "contact" ? "active navbar-link" : "navbar-link"}
+								onClick={() => onUpdateActiveLink("contact")}
+							>
+								<button className="vvd">
+									<span>Let's Connect</span>
+								</button>
+							</Nav.Link>
+						</Nav>
 					</span>
 				</Navbar.Collapse>
 			</Container>

@@ -1,15 +1,21 @@
 import { useState, useEffect } from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import { ArrowRightCircle, ArrowUpRightCircle, Tornado } from "react-bootstrap-icons";
+import { Container, Row, Col, Nav } from "react-bootstrap";
+import { ArrowRightCircle } from "react-bootstrap-icons";
 import headerImg from "../assets/img/header-img.svg";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
 	const [loopNum, setLoopNum] = useState(0);
 	const [isDeleting, setIsDeleting] = useState(false);
-	const toRotate = ["Web Developer", "Web Designer", "UI/UX Designer"];
+	const toRotate = ["Web Developer", "Software Developer", "Full Stack Developer"];
 	const [text, setText] = useState("");
 	const [delta, setDelta] = useState(200 - Math.random() * 100);
 	const period = 1500;
+	const [activeLink, setActiveLink] = useState("home");
+	const onUpdateActiveLink = (value) => {
+		setActiveLink(value);
+	};
 
 	useEffect(() => {
 		let ticker = setInterval(() => {
@@ -19,6 +25,7 @@ export const Banner = () => {
 		return () => {
 			clearInterval(ticker);
 		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
 	}, [text]);
 
 	const tick = () => {
@@ -47,22 +54,38 @@ export const Banner = () => {
 			<Container>
 				<Row className="align-items-center">
 					<Col xs={12} md={6} xl={7}>
-						<span className="tagline">Welcome to my Portfolio</span>
-						<h1 className="txt-rotate">
-							{`Hi I'm Dominic `}
-							<span className="wrap">{text}</span>
-						</h1>
-						<p>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-							ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-						</p>
-						<button onClick={() => console.log("conect")}>
-							Let's Connect <ArrowUpRightCircle size={25} />
-						</button>
+						<TrackVisibility>
+							{({ isVisible }) => (
+								<div className={isVisible ? "animate__animated animate__fadeInUp" : "animate__animated animate__fadeOutDown"}>
+									<span className="tagline">Welcome to my Portfolio</span>
+									<h1 className="txt-rotate">
+										{`Hi I'm Dominic `}
+										<br />
+										<span className="wrap">{text}</span>
+									</h1>
+									<p>
+										Passionate about driving innovation and adding value to organizations, I am an IT graduate with expertise in web
+										development, software development, and project management, possessing exceptional analytical and problem-solving
+										capabilities.
+									</p>
+									<Nav>
+										<Nav.Link
+											href="#contact"
+											className={activeLink === "contact" ? "active navbar-link" : "navbar-link"}
+											onClick={() => onUpdateActiveLink("contact")}
+										>
+											<button>
+												Let's Connect <ArrowRightCircle size={25} />
+											</button>
+										</Nav.Link>
+									</Nav>
+								</div>
+							)}
+						</TrackVisibility>
 					</Col>
-					<Col xs={12} md={6} xl={5}>
+					{/* <Col xs={12} md={6} xl={5}>
 						<img src={headerImg} alt="Header Img" />
-					</Col>
+					</Col> */}
 				</Row>
 			</Container>
 		</section>
