@@ -56,8 +56,8 @@ export const Banner = () => {
 					<Col xs={12} md={6} xl={7}>
 						<TrackVisibility>
 							{({ isVisible }) => (
-								<div className={isVisible ? "animate__animated animate__fadeInUp" : "animate__animated animate__fadeOutDown"}>
-									<span className="tagline">Welcome to my Portfolio</span>
+								<div className={isVisible ? "animate__animated animate__pulse" : ""}>
+									<span className="tagline">Made with React</span>
 									<h1 className="txt-rotate">
 										{`Hi I'm Dominic`}
 										<br />
