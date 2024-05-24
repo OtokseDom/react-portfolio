@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
-import logo from "../assets/img/logo.svg";
+import logo from "../assets/img/logo.png";
 import navIcon1 from "../assets/img/nav-icon1.svg";
 import navIcon4 from "../assets/img/nav-icon4.svg";
 import navIcon2 from "../assets/img/nav-icon2.svg";
@@ -31,7 +31,7 @@ export const NavBar = () => {
 		<Navbar expand="lg" className={scrolled ? "scrolled" : ""}>
 			<Container>
 				<Navbar.Brand href="#home">
-					<img src={logo} alt="logo" />
+					<img className="navbar-logo" src={logo} alt="logo" />
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav">
 					<span className="navbar-toggler-icon"></span>
@@ -62,13 +62,13 @@ export const NavBar = () => {
 					</Nav>
 					<span className="navbar-text">
 						<div className="social-icon">
-							<a href="https://www.linkedin.com/in/john-dominic-escoto-a29778309" target="_blank">
+							<a href="https://www.linkedin.com/in/john-dominic-escoto-a29778309" target="_blank" rel="noreferrer">
 								<img src={navIcon1} alt="" />
 							</a>
-							<a href="mailto:imjohndominic08@gmail.com" target="_blank">
+							<a href="mailto:imjohndominic08@gmail.com" target="_blank" rel="noreferrer">
 								<img src={navIcon4} alt="" />
 							</a>
-							<a href="https://www.facebook.com/access.any" target="_blank">
+							<a href="https://www.facebook.com/access.any" target="_blank" rel="noreferrer">
 								<img src={navIcon2} alt="" />
 							</a>
 						</div>

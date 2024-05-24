@@ -7,6 +7,18 @@ import projImg3 from "../assets/img/Project1-3.png";
 import projImg4 from "../assets/img/Project1-4.png";
 import projImg5 from "../assets/img/Project1-5.png";
 import projImg6 from "../assets/img/Project1-6.png";
+import projImg2_1 from "../assets/img/Project2-1.png";
+import projImg2_2 from "../assets/img/Project2-2.png";
+import projImg2_3 from "../assets/img/Project2-3.png";
+import projImg2_4 from "../assets/img/Project2-4.png";
+import projImg2_5 from "../assets/img/Project2-5.png";
+import projImg2_6 from "../assets/img/Project2-6.png";
+import projImg3_1 from "../assets/img/Project3-1.png";
+import projImg3_2 from "../assets/img/Project3-2.png";
+import projImg3_3 from "../assets/img/Project3-3.png";
+import projImg3_4 from "../assets/img/Project3-4.png";
+import projImg3_5 from "../assets/img/Project3-5.png";
+import projImg3_6 from "../assets/img/Project3-6.png";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
@@ -14,7 +26,7 @@ export const Projects = () => {
 	const projects = [
 		{
 			title: "Log In Page",
-			description: "Simple and Elegant",
+			description: "visit bucsrdms.com",
 			imgUrl: projImg1,
 		},
 		{
@@ -43,6 +55,70 @@ export const Projects = () => {
 			imgUrl: projImg6,
 		},
 	];
+	const projects2 = [
+		{
+			title: "Landing Page",
+			description: "Overview, Top Destinations, Top Tour Operators, Footer",
+			imgUrl: projImg2_1,
+		},
+		{
+			title: "Destinations Page & Details Page",
+			description: "List of destinations with rating and heart feature.",
+			imgUrl: projImg2_2,
+		},
+		{
+			title: "Add Destination Form",
+			description: "Multi-step form with Google Maps API for pinning location",
+			imgUrl: projImg2_3,
+		},
+		{
+			title: "Rating",
+			description: "Star rating with image attachmet",
+			imgUrl: projImg2_4,
+		},
+		{
+			title: "Admin Page",
+			description: "Reports, Destination/Tour Opeator Management, Requests Handling, Activity Logs",
+			imgUrl: projImg2_5,
+		},
+		{
+			title: "Chat System",
+			description: "Chat with registered users, color theme and dark mode",
+			imgUrl: projImg2_6,
+		},
+	];
+	const projects3 = [
+		{
+			title: "Sign In Page",
+			description: "With restore database feature, sign up, and forgot password option",
+			imgUrl: projImg3_1,
+		},
+		{
+			title: "Home Page",
+			description: "Dashboard with reports of current/other event",
+			imgUrl: projImg3_2,
+		},
+		{
+			title: "Attendance Page",
+			description: "Searches by student no. which enables/disables time-in/time-out button based on their attendance",
+			imgUrl: projImg3_3,
+		},
+		{
+			title: "Attendance Records",
+			description: "List of attendance of specific event with report generation",
+			imgUrl: projImg3_4,
+		},
+		{
+			title: "Student Records",
+			description: "List of registered students with reprot generation",
+			imgUrl: projImg3_5,
+		},
+		{
+			title: "Student Registration",
+			description: "Form for adding a student into the system",
+			imgUrl: projImg3_6,
+		},
+	];
 
 	return (
 		<section className="project" id="project">
@@ -53,10 +129,9 @@ export const Projects = () => {
 							{({ isVisible }) => (
 								<div className={isVisible ? "animate__animated animate__fadeInUp" : "animate__animated animate__fadeOutDown"}>
 									<h2>Projects</h2>
-									<p>Previous projects as employed web developer and as an undergrad student!</p>
 									<p>
-										These websites are products of hardwork and passion. <br />
-										They're mobile responsive too!
+										These projects are products of hardwork and passion. <br />
+										Websites are mobile responsive too!
 									</p>
 								</div>
 							)}
@@ -64,18 +139,21 @@ export const Projects = () => {
 						<Tab.Container id="projects-tabs" defaultActiveKey="first">
 							<Nav variant="pills" className="nav-pills mb-5 justify-content-center align-items-center" id="pills-tab">
 								<Nav.Item>
-									<Nav.Link eventKey="first">BUCS-RDMS (Live)</Nav.Link>
+									<Nav.Link eventKey="first">CodeIgniter</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
-									<Nav.Link eventKey="second">Lakbay Agapay (Thesis)</Nav.Link>
+									<Nav.Link eventKey="second">Laravel</Nav.Link>
 								</Nav.Item>
 								<Nav.Item>
-									<Nav.Link eventKey="third">Tab three</Nav.Link>
+									<Nav.Link eventKey="third">VB.NET</Nav.Link>
 								</Nav.Item>
 							</Nav>
 							<Tab.Content>
 								<Tab.Pane eventKey="first">
 									<Row>
+										<Col xs={12}>
+											<p className="justify-content-center align-items-center mt-0">BUCS - Research Document Management System (Live)</p>
+										</Col>
 										{projects.map((project, index) => {
 											return <ProjectCard key={index} {...project} />;
 										})}
@@ -83,14 +161,20 @@ export const Projects = () => {
 								</Tab.Pane>
 								<Tab.Pane eventKey="second">
 									<Row>
-										{projects.map((project, index) => {
+										<Col xs={12}>
+											<p className="justify-content-center align-items-center mt-0">Lakbay Agapay: Tourism Website (Thesis)</p>
+										</Col>
+										{projects2.map((project, index) => {
 											return <ProjectCard key={index} {...project} />;
 										})}
 									</Row>
 								</Tab.Pane>
 								<Tab.Pane eventKey="third">
 									<Row>
-										{projects.map((project, index) => {
+										<Col xs={12}>
+											<p className="justify-content-center align-items-center mt-0">Event Attendance System (Academic Requirement)</p>
+										</Col>
+										{projects3.map((project, index) => {
 											return <ProjectCard key={index} {...project} />;
 										})}
 									</Row>

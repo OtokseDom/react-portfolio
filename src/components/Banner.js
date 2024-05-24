@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Container, Row, Col, Nav } from "react-bootstrap";
 import { ArrowRightCircle } from "react-bootstrap-icons";
-import headerImg from "../assets/img/header-img.svg";
+// import headerImg from "../assets/img/header-img.svg";
 import "animate.css";
 import TrackVisibility from "react-on-screen";
 
@@ -59,14 +59,21 @@ export const Banner = () => {
 								<div className={isVisible ? "animate__animated animate__fadeInUp" : "animate__animated animate__fadeOutDown"}>
 									<span className="tagline">Welcome to my Portfolio</span>
 									<h1 className="txt-rotate">
-										{`Hi I'm Dominic `}
+										{`Hi I'm Dominic`}
 										<br />
 										<span className="wrap">{text}</span>
 									</h1>
 									<p>
-										Passionate about driving innovation and adding value to organizations, I am an IT graduate with expertise in web
+										{/* Passionate about driving innovation and adding value to organizations, I am an IT graduate with expertise in web
 										development, software development, and project management, possessing exceptional analytical and problem-solving
-										capabilities.
+										capabilities. */}
+										A passionate and result-driven web developer dedicated to creating extraordinary online experiences. With boundless
+										enthusiasm and a commitment to excellence, I approach every project with meticulous effort and consistency. My mission
+										is to transform ideas into stunning, functional websites that exceed expectations.
+										{/* <p>
+													Let's collaborate to push the boundaries of web development, crafting innovative solutions that drive
+													success and leave a lasting impact. Welcome to a space where your vision meets my expertise.
+												</p> */}
 									</p>
 									<Nav>
 										<Nav.Link
